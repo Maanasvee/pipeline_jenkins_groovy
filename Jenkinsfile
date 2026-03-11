@@ -9,25 +9,25 @@ pipeline {
 
         stage('Pull from Git') {
             steps {
-                git 'https://github.com/Maanasvee/pipeline_jenkins_groovy.git'
+                git branch: 'main', url: 'https://github.com/Maanasvee/pipeline_jenkins_groovy.git'
             }
         }
 
         stage('Build') {
             steps {
-                bat 'Build.bat'
+                bat '.\\Build.bat'
             }
         }
 
         stage('Test') {
             steps {
-                bat 'Test.bat'
+                bat '.\\Test.bat'
             }
         }
 
         stage('Deploy') {
             steps {
-                bat 'Deploy.bat'
+                bat '.\\Deploy.bat'
             }
         }
 
