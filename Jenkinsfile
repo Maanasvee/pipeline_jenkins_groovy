@@ -1,33 +1,23 @@
 pipeline {
     agent any
 
-    options {
-        skipDefaultCheckout(true)
-    }
-
     stages {
 
-        stage('Pull from Git') {
+        stage('JOB_1') {
             steps {
-                git branch: 'main', url: 'https://github.com/Maanasvee/pipeline_jenkins_groovy.git'
+                bat 'mkdir C:\\JENKINS_PIPELINE\\JOB_1'
             }
         }
 
-        stage('Build') {
+        stage('JOB_2') {
             steps {
-                bat '.\\Build.bat'
+                bat 'mkdir C:\\JENKINS_PIPELINE\\JOB_1\\JOB_2'
             }
         }
 
-        stage('Test') {
+        stage('JOB_3') {
             steps {
-                bat '.\\Test.bat'
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                bat '.\\Deploy.bat'
+                bat 'mkdir C:\\JENKINS_PIPELINE\\JOB_1\\JOB_2\\JOB_3'
             }
         }
 
